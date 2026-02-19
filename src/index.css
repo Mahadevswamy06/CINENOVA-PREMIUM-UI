@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #E50914;
+  /* Netflix Red-ish / Deep Red */
+  --color-secondary: #141414;
+  /* Dark Background */
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: "Inter", system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  /* Default Dark Mode Styles */
+  body {
+    /* Rich Deep Space Gradient instead of pure black */
+    background: radial-gradient(circle at top center, #1e293b, #0f172a, #020617);
+    background-attachment: fixed;
+    color: white;
+    @apply min-h-screen selection:bg-red-500 selection:text-white transition-colors duration-300;
+  }
+
+  /* Light Mode Overrides */
+  html.light body {
+    /* Softer, Premium Light Grey/Blue Gradient */
+    background: radial-gradient(circle at top center, #f8fafc, #e2e8f0, #cbd5e1);
+    background-attachment: fixed;
+    color: #1e293b;
+    @apply text-slate-900;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E50914;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b20710;
+}
