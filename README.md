@@ -2,6 +2,9 @@
 
 A visually stunning, frontend-only streaming web application built with React, Tailwind CSS, Framer Motion, and React Three Fiber.
 
+## 🔗 Live Demo
+Check out the live application here: [https://cinenova-premium-ui.vercel.app](https://cinenova-premium-ui.vercel.app)
+
 ## 🚀 Features
 
 - **Premium UI**: Cinematic dark theme, glassmorphism cards, and advanced animations.
