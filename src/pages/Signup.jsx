@@ -78,36 +78,57 @@ const Signup = () => {
                         <input
                             type="text"
                             name="name"
+                            id="name"
                             required
                             placeholder="Full Name"
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
+                            className="peer w-full px-4 py-4 bg-black/50 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
                         />
+                        <label
+                            htmlFor="name"
+                            className="absolute left-4 top-4 text-gray-400 text-sm transition-all duration-300 transform -translate-y-7 scale-90 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7 peer-focus:text-red-500 pointer-events-none"
+                        >
+                            Full Name
+                        </label>
                     </div>
 
                     <div className="group relative">
                         <input
                             type="email"
                             name="email"
+                            id="email"
                             required
                             placeholder="Email Address"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
+                            className="peer w-full px-4 py-4 bg-black/50 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
                         />
+                        <label
+                            htmlFor="email"
+                            className="absolute left-4 top-4 text-gray-400 text-sm transition-all duration-300 transform -translate-y-7 scale-90 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7 peer-focus:text-red-500 pointer-events-none"
+                        >
+                            Email Address
+                        </label>
                     </div>
 
                     <div className="group relative">
                         <input
                             type="password"
                             name="password"
+                            id="password"
                             required
                             placeholder="Password"
                             value={formData.password}
                             onChange={handleChange}
-                            className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-1 transition-all ${passwordError ? 'border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-green-500 focus:ring-green-500'}`}
+                            className={`peer w-full px-4 py-4 bg-black/50 border rounded-lg text-white placeholder-transparent focus:outline-none focus:ring-1 transition-all ${passwordError ? 'border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-green-500 focus:ring-green-500'}`}
                         />
+                        <label
+                            htmlFor="password"
+                            className={`absolute left-4 top-4 text-gray-400 text-sm transition-all duration-300 transform -translate-y-7 scale-90 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7 pointer-events-none ${passwordError ? 'peer-focus:text-red-500' : 'peer-focus:text-green-500'}`}
+                        >
+                            Password
+                        </label>
                         <div className="text-xs text-gray-400 mt-2 space-y-1 pl-1">
                             <p className={formData.password.length >= 8 ? "text-green-500" : ""}>• At least 8 characters</p>
                             <p className={/[A-Z]/.test(formData.password) ? "text-green-500" : ""}>• One uppercase letter</p>
@@ -121,12 +142,19 @@ const Signup = () => {
                         <input
                             type="password"
                             name="confirmPassword"
+                            id="confirmPassword"
                             required
                             placeholder="Confirm Password"
                             value={formData.confirmPassword}
                             onChange={handleChange}
-                            className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-1 transition-all ${formData.confirmPassword && formData.password !== formData.confirmPassword ? 'border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-green-500 focus:ring-green-500'}`}
+                            className={`peer w-full px-4 py-4 bg-black/50 border rounded-lg text-white placeholder-transparent focus:outline-none focus:ring-1 transition-all ${formData.confirmPassword && formData.password !== formData.confirmPassword ? 'border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-green-500 focus:ring-green-500'}`}
                         />
+                        <label
+                            htmlFor="confirmPassword"
+                            className={`absolute left-4 top-4 text-gray-400 text-sm transition-all duration-300 transform -translate-y-7 scale-90 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7 pointer-events-none ${formData.confirmPassword && formData.password !== formData.confirmPassword ? 'peer-focus:text-red-500' : 'peer-focus:text-green-500'}`}
+                        >
+                            Confirm Password
+                        </label>
                     </div>
 
                     <motion.button

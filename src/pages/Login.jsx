@@ -52,14 +52,17 @@ const Login = () => {
                             required
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="peer w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all duration-300"
+                            className="peer w-full px-4 py-4 bg-black/40 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all duration-300"
                             placeholder="Email"
                             id="email"
                         />
-                        <label htmlFor="email" className="absolute left-4 top-3 text-gray-400 text-sm transition-all duration-300 transform -translate-y-6 scale-75 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-red-500">
+                        <label
+                            htmlFor="email"
+                            className="absolute left-4 top-4 text-gray-400 text-sm transition-all duration-300 transform -translate-y-7 scale-90 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7 peer-focus:text-red-500 pointer-events-none"
+                        >
                             Email Address
                         </label>
-                        <div className="absolute right-3 top-3 opacity-0 peer-focus:opacity-100 transition-opacity duration-300">
+                        <div className="absolute right-3 top-4 opacity-0 peer-focus:opacity-100 transition-opacity duration-300">
                             {email.includes('@') ? <CheckCircle2 className="w-5 h-5 text-green-500" /> : null}
                         </div>
                     </div>
@@ -70,11 +73,14 @@ const Login = () => {
                             required
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="peer w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all duration-300"
+                            className="peer w-full px-4 py-4 bg-black/40 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all duration-300"
                             placeholder="Password"
                             id="password"
                         />
-                        <label htmlFor="password" className="absolute left-4 top-3 text-gray-400 text-sm transition-all duration-300 transform -translate-y-6 scale-75 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-red-500">
+                        <label
+                            htmlFor="password"
+                            className="absolute left-4 top-4 text-gray-400 text-sm transition-all duration-300 transform -translate-y-7 scale-90 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7 peer-focus:text-red-500 pointer-events-none"
+                        >
                             Password
                         </label>
                     </div>
