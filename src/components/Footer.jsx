@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
     const [clicked, setClicked] = useState(false);
-    const credit = "MahadevSwamy";
-    const words = [credit]; // Single word to remove space
+    const credit = "Mahadev Swamy";
+    const words = credit.split(" ");
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -57,6 +57,8 @@ const Footer = () => {
                                         {char}
                                     </motion.span>
                                 ))}
+                                {/* Add space unless it's the last word */}
+                                {wordIndex !== words.length - 1 && <span>&nbsp;</span>}
                             </div>
                         ))}
                     </motion.div>
