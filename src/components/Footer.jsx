@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
     const [clicked, setClicked] = useState(false);
-    const credit = "Mahadev Swamy";
-    const words = credit.split(" ");
+    const credit = "MahadevSwamy";
+    const words = [credit]; // Single word to remove space
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -30,15 +30,16 @@ const Footer = () => {
     return (
         <footer className="w-full py-8 mt-12 border-t border-white/10 bg-gradient-to-t from-red-900/10 to-black/80 backdrop-blur-md">
             <div className="container mx-auto px-4 flex justify-center items-center text-sm text-gray-400">
-                <div className="flex items-center gap-1 cursor-pointer group" onClick={() => setClicked(true)}>
+                <div className="flex flex-col md:flex-row items-center gap-2 cursor-pointer group" onClick={() => setClicked(true)}>
+                    <span className="opacity-80 group-hover:opacity-100 transition-opacity">Designed & Developed by</span>
                     <motion.div
-                        className="flex gap-1 font-bold"
+                        className="flex font-bold"
                         variants={containerVariants}
                         initial="hidden"
                         animate={clicked ? "animate" : "visible"}
                     >
                         {words.map((word, wordIndex) => (
-                            <div key={wordIndex} className="flex text-lg tracking-[0.2em]">
+                            <div key={wordIndex} className="flex text-lg tracking-[0.1em]">
                                 {word.split("").map((char, charIndex) => (
                                     <motion.span
                                         key={`${wordIndex}-${charIndex}`}
@@ -56,8 +57,6 @@ const Footer = () => {
                                         {char}
                                     </motion.span>
                                 ))}
-                                {/* Add space unless it's the last word */}
-                                {wordIndex !== words.length - 1 && <span>&nbsp;</span>}
                             </div>
                         ))}
                     </motion.div>
